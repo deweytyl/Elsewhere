@@ -4,18 +4,16 @@ using System.Collections;
 public class PopUp : MonoBehaviour {
 
 	//public Texture2D source;
-	public GameObject light;
-
-	private bool toggleGUI;
+	public GameObject source;
 
 	public void Start() {
-		light = GameObject.Find("Door/Light");
-		light.SetActive (false);
-
+		source.SetActive (false);
 	}
 
-	public void OnTriggerEnter () {
-		light.SetActive (true);
+	public void OnTriggerEnter2D (Collider2D other) {
+		if (other.gameObject.name == "Char") {
+			source.SetActive (true);
+		}
 	}
 
 }
