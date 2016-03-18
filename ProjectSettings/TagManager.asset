@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - Moveble
+  - 
   - 
   - 
   - 
@@ -41,12 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 1924259453
+  - name: Floor
+    uniqueID: 1937722399
+    locked: 0
+  - name: Items
+    uniqueID: 362405901
     locked: 0
   - name: Player
-    uniqueID: 699572529
-    locked: 0
-  - name: Object
-    uniqueID: 528658197
+    uniqueID: 40452853
     locked: 0
