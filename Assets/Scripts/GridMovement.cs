@@ -5,7 +5,8 @@ using System.Collections;
 
 public class GridMovement : MonoBehaviour {
 
-	private float speed = 2.0f;
+	public float speed = 2.0f;
+
 	private Vector3 destination;
 	private Vector3 previousPosition;
 
@@ -19,11 +20,9 @@ public class GridMovement : MonoBehaviour {
 		PerformMove ();
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
-		Debug.Log ("Player collided!");
-
-		destination = previousPosition;
-	}
+//	void OnCollisionEnter2D(Collision2D collision) {
+//		ResetDestination ();
+//	}
 
 	void PerformMove () {
 		if (transform.position == destination) {
@@ -51,5 +50,25 @@ public class GridMovement : MonoBehaviour {
 		} else if (Input.GetKey (KeyCode.RightArrow)) {
 			destination += Vector3.right;
 		}
+			
+		if (IsWall (destination)) {
+			ResetDestination ();
+		}
+
+	}
+
+	bool IsWall(Vector3 position) {
+		bool destinationIsWall = false;
+		Collider2D[] colliders = Physics2D.OverlapCircleAll (destination, 0.1f);
+
+		foreach (Collider2D collider in colliders) {
+			destinationIsWall = destinationIsWall || !(collider.isTrigger);
+		}
+
+		return destinationIsWall;
+	}
+
+	void ResetDestination() {
+		destination = previousPosition;
 	}
 }
