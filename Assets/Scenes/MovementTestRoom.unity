@@ -1271,7 +1271,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417010, guid: 8d169b197dcf64b859037795d867a36a, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d169b197dcf64b859037795d867a36a, type: 2}
@@ -1367,7 +1367,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 406160, guid: 038998774947c4a8fa170d5b4492a7dd, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 038998774947c4a8fa170d5b4492a7dd, type: 2}
@@ -1781,7 +1781,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410520, guid: 64139c47b57e34c5fa97fd79f8d25244, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6133920, guid: 64139c47b57e34c5fa97fd79f8d25244, type: 2}
       propertyPath: m_IsTrigger
@@ -1790,6 +1790,10 @@ Prefab:
     - target: {fileID: 21210520, guid: 64139c47b57e34c5fa97fd79f8d25244, type: 2}
       propertyPath: m_SortingLayerID
       value: 362405901
+      objectReference: {fileID: 0}
+    - target: {fileID: 110520, guid: 64139c47b57e34c5fa97fd79f8d25244, type: 2}
+      propertyPath: m_Name
+      value: PressurePanel
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11431888, guid: 64139c47b57e34c5fa97fd79f8d25244, type: 2}
@@ -2119,7 +2123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410520, guid: 46e8bf4bf645a47e3ae1b60c7e18418c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 21210520, guid: 46e8bf4bf645a47e3ae1b60c7e18418c, type: 2}
       propertyPath: m_SortingLayerID
@@ -2283,10 +2287,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 21210520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 362405901
+    - target: {fileID: 110520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 2}
+      propertyPath: m_Name
+      value: CrumblePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 11408432, guid: ad25a4e752915438e9f55a35bedacf1f, type: 2}
+      propertyPath: listeners.Array.data[0]
+      value: 
+      objectReference: {fileID: 252703030}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad25a4e752915438e9f55a35bedacf1f, type: 2}
   m_IsPrefabParent: 0
@@ -3508,23 +3516,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 425636, guid: 74398dca0c1f64f34aab8ba7bdb6c527, type: 2}
   m_PrefabInternal: {fileID: 1445394196}
---- !u!1 &1460144841 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 110520, guid: ad25a4e752915438e9f55a35bedacf1f, type: 2}
-  m_PrefabInternal: {fileID: 737876118}
---- !u!114 &1460144845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1460144841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13425331b01c14f10a86b6fefdc07695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listeners:
-  - {fileID: 252703030}
 --- !u!1001 &1474445931
 Prefab:
   m_ObjectHideFlags: 0
