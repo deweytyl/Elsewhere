@@ -11,7 +11,6 @@ public class CrumblePanel : Trigger {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log ("Ouch, i was stepped on");
 
 		if (active) {
 			EnableListenerTriggers ();

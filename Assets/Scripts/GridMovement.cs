@@ -7,16 +7,22 @@ public class GridMovement : MonoBehaviour {
 
 	public float speed = 2.0f;
 
+	private int steps = 0;
+	private bool isMoving = false;
 	private Vector3 destination;
 	private Vector3 previousPosition;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
+		ClearDestination ();
+	}
+
+	public void ClearDestination() {
 		destination = transform.position;
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 		PerformMove ();
 	}
 
@@ -24,17 +30,27 @@ public class GridMovement : MonoBehaviour {
 //		ResetDestination ();
 //	}
 
+	public int Steps() {
+		return steps;
+	}
+
+	public bool IsMoving() {
+		return isMoving;
+	}
+
 	void PerformMove () {
 		if (transform.position == destination) {
-			//if (previousPosition != destination)
-			//	Debug.LogFormat (string.Format ("previousPosition = {0}/ndestination = {1}", previousPosition, destination));
-
-			previousPosition = destination;
+			isMoving = false;
+			steps++;
+			previousPosition = transform.position;
 
 			UpdateDestinationForInputDirection ();
 		}
 
-		transform.position = Vector3.MoveTowards (transform.position, destination, Time.deltaTime * speed);
+		if (destination != transform.position) {
+			transform.position = Vector3.MoveTowards (transform.position, destination, Time.deltaTime * speed);
+			isMoving = true;
+		}
 	}
 
 	void UpdateDestinationForInputDirection() {
@@ -62,9 +78,8 @@ public class GridMovement : MonoBehaviour {
 		Collider2D[] colliders = Physics2D.OverlapCircleAll (destination, 0.1f);
 
 		foreach (Collider2D collider in colliders) {
-			destinationIsWall = destinationIsWall || !(collider.isTrigger);
+			destinationIsWall = destinationIsWall || !collider.isTrigger;
 		}
-
 		return destinationIsWall;
 	}
 

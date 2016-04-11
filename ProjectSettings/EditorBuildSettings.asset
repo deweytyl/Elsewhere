@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/prologue_1.unity
-  - enabled: 1
-    path: Assets/Scenes/powertest.unity
+  - enabled: 0
+    path: Assets/_Scenes/prologue_1.unity
+  - enabled: 0
+    path: Assets/_Scenes/powertest.unity

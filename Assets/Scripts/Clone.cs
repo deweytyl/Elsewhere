@@ -11,14 +11,19 @@ public class Clone : MonoBehaviour {
 	private bool isActive = false;
 	private GameObject cloneSpawner;
 	private GameObject clone;
+	private GridMovement playerMovement;
 
-	void Update () {
-		if (!isActive && Input.GetKeyDown (KeyCode.C)) {
+	void Start() {
+		playerMovement = GetComponent<GridMovement> ();
+	}
+
+	void Update() {
+		if (!isActive && !playerMovement.IsMoving () && Input.GetKeyDown (KeyCode.C)) {
 			ActivateClone ();
 		}
 	}
 
-	void ActivateClone () {
+	void ActivateClone() {
 		isActive = true;
 
 		// disable player movement
@@ -33,6 +38,7 @@ public class Clone : MonoBehaviour {
 		yield return new WaitForSeconds(duration);
 
 		clone = Instantiate (clonePrefab, cloneSpawner.transform.position, Quaternion.identity) as GameObject;
+		clone.gameObject.name = "Clone";
 		Destroy (cloneSpawner);
 		cloneSpawner = null;
 
@@ -42,7 +48,7 @@ public class Clone : MonoBehaviour {
 		StartCoroutine (DestroyClone (cloneDuration));
 	}
 
-	IEnumerator DestroyClone (float duration) {
+	IEnumerator DestroyClone(float duration) {
 		yield return new WaitForSeconds(duration);
 
 		Destroy (clone);
