@@ -12,6 +12,7 @@ public class Hole : MonoBehaviour {
 			GridMovement movement = player.GetComponent<GridMovement> ();
 			movement.ClearDestination ();
 		}
+
 		if (other.gameObject.name == "Clone") {
 			Destroy (other.gameObject);
 		}

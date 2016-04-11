@@ -5,12 +5,21 @@ public class Clone : MonoBehaviour {
 
 	public float spawnDuration;
 	public float cloneDuration;
+	public int maxSpawnSteps;
+
 	public GameObject cloneSpawnerPrefab;
 	public GameObject clonePrefab;
 
+	private float elapsedSpawnTime;
+	private float elapsedCloneTime;
+	private int elapsedSteps;
+	private int initialSteps;
+
 	private bool isActive = false;
+
 	private GameObject cloneSpawner;
 	private GameObject clone;
+
 	private GridMovement playerMovement;
 
 	void Start() {
@@ -21,39 +30,85 @@ public class Clone : MonoBehaviour {
 		if (!isActive && !playerMovement.IsMoving () && Input.GetKeyDown (KeyCode.C)) {
 			ActivateClone ();
 		}
+
+		if (isActive && cloneSpawner) {
+
+			elapsedSteps = cloneSpawner.GetComponent<GridMovement> ().Steps () - initialSteps;
+			elapsedSpawnTime += Time.deltaTime;
+
+			if (elapsedSteps >= 5 || elapsedSpawnTime > 5) {
+				SpawnClone ();
+			}
+		}
+
+		if (isActive && clone) {
+			elapsedCloneTime += Time.deltaTime;
+
+			if (elapsedCloneTime > cloneDuration) {
+				DestroyClone ();
+			}
+		}
+
+		if (isActive && !cloneSpawner && !clone) {
+			isActive = false;
+		}
 	}
 
-	void ActivateClone() {
+	void ActivateClone () {
 		isActive = true;
+		SpawnCloneSpawner ();
+	}
 
+	void SpawnCloneSpawner() {
 		// disable player movement
-		GetComponent<GridMovement>().enabled = false;
+		playerMovement.enabled = false;
+
+		Vector3 spawnPoint = transform.position;
 
 		// create clone spawner
-		cloneSpawner = Instantiate (cloneSpawnerPrefab, transform.position + Vector3.right, Quaternion.identity) as GameObject;
-		StartCoroutine (SpawnClone (spawnDuration));
+		cloneSpawner = Instantiate (cloneSpawnerPrefab, spawnPoint, Quaternion.identity) as GameObject;
+
+		initialSteps = cloneSpawner.GetComponent<GridMovement> ().Steps ();
+		elapsedSpawnTime = 0;
 	}
 
-	IEnumerator SpawnClone(float duration) {
-		yield return new WaitForSeconds(duration);
-
+	public void SpawnClone() {
 		clone = Instantiate (clonePrefab, cloneSpawner.transform.position, Quaternion.identity) as GameObject;
 		clone.gameObject.name = "Clone";
-		Destroy (cloneSpawner);
-		cloneSpawner = null;
+
+		Collider2D[] underneath = Physics2D.OverlapCircleAll (clone.transform.position, .2f);
+		foreach (Collider2D collider in underneath) {
+			if (collider.gameObject != clone && collider.gameObject != cloneSpawner && collider.GetComponent<Hole> ()) {
+				DestroyClone ();
+			}
+		}
+
+		DestroyCloneSpawner ();
 
 		GetComponent<GridMovement> ().enabled = true;
 		clone.GetComponent<GridMovement> ().enabled = true;
-
-		StartCoroutine (DestroyClone (cloneDuration));
+		elapsedCloneTime = 0;
 	}
 
-	IEnumerator DestroyClone(float duration) {
-		yield return new WaitForSeconds(duration);
+	IEnumerator DestroyCloneTimed() {
+		yield return new WaitForSeconds(cloneDuration);
 
-		Destroy (clone);
-		clone = null;
+		DestroyClone ();
+	}
 
-		isActive = false;
+	void DestroyCloneSpawner () {
+		if (cloneSpawner) {
+			Destroy (cloneSpawner);
+			cloneSpawner = null;
+		}
+	}
+
+	public void DestroyClone() {
+		if (clone) {
+			Destroy (clone);
+			clone = null;
+
+			isActive = false;
+		}
 	}
 }

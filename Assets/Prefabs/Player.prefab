@@ -105,7 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDuration: 5
-  cloneDuration: 5
+  cloneDuration: 60
+  maxSpawnSteps: 0
   cloneSpawnerPrefab: {fileID: 138020, guid: a24f49cdb31df4d9696d997d2541d4e6, type: 2}
   clonePrefab: {fileID: 160310, guid: 4bdb662626221456b906abd8f4d88e28, type: 2}
 --- !u!212 &21225224
@@ -134,7 +135,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 40452853
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: fbe1e7b94bb1a4a099d5bcb15a00141c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

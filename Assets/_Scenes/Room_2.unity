@@ -1928,6 +1928,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11481908, guid: 8d169b197dcf64b859037795d867a36a, type: 2}
+      propertyPath: cloneDuration
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d169b197dcf64b859037795d867a36a, type: 2}
   m_IsPrefabParent: 0

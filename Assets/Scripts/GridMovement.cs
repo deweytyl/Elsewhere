@@ -9,6 +9,8 @@ public class GridMovement : MonoBehaviour {
 
 	private int steps = 0;
 	private bool isMoving = false;
+	private Vector3 direction = Vector3.right;
+
 	private Vector3 destination;
 	private Vector3 previousPosition;
 
@@ -19,16 +21,12 @@ public class GridMovement : MonoBehaviour {
 
 	public void ClearDestination() {
 		destination = transform.position;
+		previousPosition = destination;
 	}
 
-	// Update is called once per frame
 	void Update() {
 		PerformMove ();
 	}
-
-//	void OnCollisionEnter2D(Collision2D collision) {
-//		ResetDestination ();
-//	}
 
 	public int Steps() {
 		return steps;
@@ -38,11 +36,18 @@ public class GridMovement : MonoBehaviour {
 		return isMoving;
 	}
 
+	public Vector3 Direction() {
+		return direction;
+	}
+
 	void PerformMove () {
 		if (transform.position == destination) {
+			if (previousPosition != transform.position) {
+				previousPosition = transform.position;
+				steps++;
+			}
+
 			isMoving = false;
-			steps++;
-			previousPosition = transform.position;
 
 			UpdateDestinationForInputDirection ();
 		}
@@ -56,15 +61,19 @@ public class GridMovement : MonoBehaviour {
 	void UpdateDestinationForInputDirection() {
 		if (Input.GetKey (KeyCode.UpArrow)) {
 			destination += Vector3.up;
+			direction = Vector3.up;
 
 		} else if (Input.GetKey (KeyCode.DownArrow)) {
 			destination += Vector3.down;
+			direction = Vector3.down;
 
 		} else if (Input.GetKey (KeyCode.LeftArrow)) {
 			destination += Vector3.left;
+			direction = Vector3.left;
 
 		} else if (Input.GetKey (KeyCode.RightArrow)) {
 			destination += Vector3.right;
+			direction = Vector3.right;
 		}
 			
 		if (IsWall (destination)) {
@@ -84,6 +93,7 @@ public class GridMovement : MonoBehaviour {
 	}
 
 	void ResetDestination() {
+		direction = previousPosition - destination;
 		destination = previousPosition;
 	}
 }

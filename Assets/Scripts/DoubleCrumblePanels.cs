@@ -27,7 +27,7 @@ public class DoubleCrumblePanels : Trigger {
 	}
 
 	public bool IsSteppedOn () {
-		Collider2D[] overlappingColliders = Physics2D.OverlapCircleAll (transform.position, 0.2f);
+		Collider2D[] overlappingColliders = Physics2D.OverlapCircleAll (transform.position, 0.5f);
 
 		foreach (Collider2D overlapper in overlappingColliders) {
 			if (overlapper.gameObject != gameObject) {
