@@ -9,3 +9,13 @@ EditorBuildSettings:
     path: Assets/_Scenes/prologue_1.unity
   - enabled: 0
     path: Assets/_Scenes/powertest.unity
+  - enabled: 1
+    path: Assets/_Scenes/Room_1.unity
+  - enabled: 1
+    path: Assets/_Scenes/Room_2.unity
+  - enabled: 1
+    path: Assets/_Scenes/Room_3.unity
+  - enabled: 1
+    path: Assets/_Scenes/Room_4.unity
+  - enabled: 1
+    path: Assets/_Scenes/Room_5.unity
