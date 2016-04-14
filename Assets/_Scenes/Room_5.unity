@@ -869,7 +869,7 @@ Transform:
   - {fileID: 227450056}
   - {fileID: 585090958}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!61 &212924387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2211,7 +2211,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417010, guid: 8d169b197dcf64b859037795d867a36a, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d169b197dcf64b859037795d867a36a, type: 2}
@@ -2775,7 +2775,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400198, guid: 85e437e5d303b4fe19bc5e1f1c2254a5, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6165694, guid: 85e437e5d303b4fe19bc5e1f1c2254a5, type: 2}
       propertyPath: m_Size.y
@@ -3059,7 +3059,7 @@ Transform:
   - {fileID: 1258843935}
   - {fileID: 131550438}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1094601237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,7 +3326,7 @@ Transform:
   - {fileID: 683782719}
   - {fileID: 1852930301}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1209335565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,7 +3682,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429268, guid: c7260538bb4d84ee98d035c4caad51c5, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11417364, guid: c7260538bb4d84ee98d035c4caad51c5, type: 2}
       propertyPath: listeners.Array.data[0]
@@ -5066,7 +5066,7 @@ Transform:
   - {fileID: 1748580781}
   - {fileID: 1102443492}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!61 &1987405891
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5148,8 +5148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: -5.5
-  y: 0.5
   respawnPoint: {fileID: 2038456395}
 --- !u!1 &2001049826
 GameObject:
@@ -5421,7 +5419,7 @@ Transform:
   - {fileID: 684965650}
   - {fileID: 180296258}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &2033742783
 MonoBehaviour:
   m_ObjectHideFlags: 0
