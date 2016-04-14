@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDuration: 5
   cloneDuration: 60
-  maxSpawnSteps: 0
+  maxSpawnSteps: 5
   cloneSpawnerPrefab: {fileID: 138020, guid: a24f49cdb31df4d9696d997d2541d4e6, type: 2}
   clonePrefab: {fileID: 160310, guid: 4bdb662626221456b906abd8f4d88e28, type: 2}
 --- !u!212 &21225224

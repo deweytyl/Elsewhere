@@ -27,7 +27,7 @@ public class Clone : MonoBehaviour {
 	}
 
 	void Update() {
-		if (!isActive && !playerMovement.IsMoving () && Input.GetKeyDown (KeyCode.C)) {
+		if (!isActive && Input.GetKeyDown (KeyCode.C) && !playerMovement.IsMoving ()) {
 			ActivateClone ();
 		}
 
@@ -36,7 +36,7 @@ public class Clone : MonoBehaviour {
 			elapsedSteps = cloneSpawner.GetComponent<GridMovement> ().Steps () - initialSteps;
 			elapsedSpawnTime += Time.deltaTime;
 
-			if (elapsedSteps >= 5 || elapsedSpawnTime > 5) {
+			if (elapsedSteps >= maxSpawnSteps || elapsedSpawnTime > spawnDuration) {
 				SpawnClone ();
 			}
 		}
@@ -76,6 +76,11 @@ public class Clone : MonoBehaviour {
 		clone = Instantiate (clonePrefab, cloneSpawner.transform.position, Quaternion.identity) as GameObject;
 		clone.gameObject.name = "Clone";
 
+		GetComponent<GridMovement> ().enabled = true;
+		clone.GetComponent<GridMovement> ().enabled = true;
+		elapsedCloneTime = 0;
+
+		// This code should move into the Hole
 		Collider2D[] underneath = Physics2D.OverlapCircleAll (clone.transform.position, .2f);
 		foreach (Collider2D collider in underneath) {
 			if (collider.gameObject != clone && collider.gameObject != cloneSpawner && collider.GetComponent<Hole> ()) {
@@ -84,10 +89,6 @@ public class Clone : MonoBehaviour {
 		}
 
 		DestroyCloneSpawner ();
-
-		GetComponent<GridMovement> ().enabled = true;
-		clone.GetComponent<GridMovement> ().enabled = true;
-		elapsedCloneTime = 0;
 	}
 
 	IEnumerator DestroyCloneTimed() {
