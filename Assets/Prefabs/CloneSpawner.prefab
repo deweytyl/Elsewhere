@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21283492}
   - 61: {fileID: 6112140}
   - 114: {fileID: 11449382}
+  - 95: {fileID: 9587726}
   m_Layer: 0
   m_Name: CloneSpawner
   m_TagString: Food
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.4216785, y: 0.5635347, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,6 +45,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!95 &9587726
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efef83809f1d14900b6c11ed2e9d1277, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11449382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,7 +100,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 40452853
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c410c16f3c7c4a92a774d46dcc5b1e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 623c5a8bfd9084515bebb4f8097bbe41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
