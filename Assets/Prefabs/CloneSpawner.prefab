@@ -14,7 +14,7 @@ GameObject:
   - 95: {fileID: 9587726}
   m_Layer: 0
   m_Name: CloneSpawner
-  m_TagString: Food
+  m_TagString: CloneSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
