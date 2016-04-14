@@ -73,22 +73,14 @@ public class Clone : MonoBehaviour {
 	}
 
 	public void SpawnClone() {
-		clone = Instantiate (clonePrefab, cloneSpawner.transform.position, Quaternion.identity) as GameObject;
-		clone.gameObject.name = "Clone";
+		Vector3 spawnPoint = cloneSpawner.transform.position;
+
+		DestroyCloneSpawner ();
+		clone = Instantiate (clonePrefab, spawnPoint, Quaternion.identity) as GameObject;
 
 		GetComponent<GridMovement> ().enabled = true;
 		clone.GetComponent<GridMovement> ().enabled = true;
 		elapsedCloneTime = 0;
-
-		// This code should move into the Hole
-		Collider2D[] underneath = Physics2D.OverlapCircleAll (clone.transform.position, .2f);
-		foreach (Collider2D collider in underneath) {
-			if (collider.gameObject != clone && collider.gameObject != cloneSpawner && collider.GetComponent<Hole> ()) {
-				DestroyClone ();
-			}
-		}
-
-		DestroyCloneSpawner ();
 	}
 
 	IEnumerator DestroyCloneTimed() {
