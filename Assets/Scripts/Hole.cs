@@ -23,12 +23,7 @@ public class Hole : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			GameObject player = other.gameObject;
 
-			player.transform.position = respawnPoint.transform.position;
-
-			// must be called after resetting player.transform.position
-			// something to fix in the future
-			GridMovement movement = player.GetComponent<GridMovement> ();
-			movement.ClearDestination ();
+			player.GetComponent<PlayerControl> ().RespawnAt (respawnPoint.transform.position);
 		
 		} else if (other.gameObject.CompareTag ("Clone")) {
 			Destroy (other.gameObject);

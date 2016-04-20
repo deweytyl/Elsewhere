@@ -13,7 +13,8 @@ GameObject:
   - 61: {fileID: 6150600}
   - 50: {fileID: 5061282}
   - 114: {fileID: 11469268}
-  - 114: {fileID: 11481908}
+  - 114: {fileID: 11451324}
+  - 114: {fileID: 11440674}
   m_Layer: 5
   m_Name: Player
   m_TagString: Player
@@ -81,6 +82,34 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11440674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5582c85addef43fd8925e31107e72a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDuration: 5
+  cloneDuration: 60
+  maxSpawnSteps: 5
+  cloneSpawnerPrefab: {fileID: 138020, guid: a24f49cdb31df4d9696d997d2541d4e6, type: 2}
+  clonePrefab: {fileID: 160310, guid: 4bdb662626221456b906abd8f4d88e28, type: 2}
+--- !u!114 &11451324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95539623e045e4e7daa89c103214e2f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveble: 0
 --- !u!114 &11469268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,23 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df91565524ac849de8743785996f6432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
---- !u!114 &11481908
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bec4b2204ea74305a73447cca6a5019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnDuration: 5
-  cloneDuration: 60
-  maxSpawnSteps: 5
-  cloneSpawnerPrefab: {fileID: 138020, guid: a24f49cdb31df4d9696d997d2541d4e6, type: 2}
-  clonePrefab: {fileID: 160310, guid: 4bdb662626221456b906abd8f4d88e28, type: 2}
+  selfControlling: 0
+  speed: 2.5
 --- !u!212 &21225224
 SpriteRenderer:
   m_ObjectHideFlags: 1
