@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Clone : MonoBehaviour {
+public class CloneAbility : MonoBehaviour {
 
-	public float spawnDuration;
-	public float cloneDuration;
-	public int maxSpawnSteps;
+	public float spawnDuration = 5;
+	public float cloneDuration = 60;
+	public int maxSpawnSteps = 5;
 
 	public GameObject cloneSpawnerPrefab;
 	public GameObject clonePrefab;
@@ -27,7 +27,7 @@ public class Clone : MonoBehaviour {
 	}
 
 	void Update() {
-		if (!isActive && !playerMovement.IsMoving () && Input.GetKeyDown (KeyCode.C)) {
+		if (!isActive && Input.GetKeyDown (KeyCode.C) && !playerMovement.IsMoving ()) {
 			ActivateClone ();
 		}
 
@@ -36,7 +36,7 @@ public class Clone : MonoBehaviour {
 			elapsedSteps = cloneSpawner.GetComponent<GridMovement> ().Steps () - initialSteps;
 			elapsedSpawnTime += Time.deltaTime;
 
-			if (elapsedSteps >= 5 || elapsedSpawnTime > 5) {
+			if (elapsedSteps >= maxSpawnSteps || elapsedSpawnTime > spawnDuration) {
 				SpawnClone ();
 			}
 		}
@@ -54,7 +54,15 @@ public class Clone : MonoBehaviour {
 		}
 	}
 
-	void ActivateClone () {
+	public bool IsActive () {
+		return isActive;
+	}
+
+	public GameObject GetClone () {
+		return clone;
+	}
+
+	public void ActivateClone () {
 		isActive = true;
 		SpawnCloneSpawner ();
 	}
@@ -67,27 +75,32 @@ public class Clone : MonoBehaviour {
 
 		// create clone spawner
 		cloneSpawner = Instantiate (cloneSpawnerPrefab, spawnPoint, Quaternion.identity) as GameObject;
+		//cloneSpawner.transform.parent = transform;
 
 		initialSteps = cloneSpawner.GetComponent<GridMovement> ().Steps ();
 		elapsedSpawnTime = 0;
 	}
 
 	public void SpawnClone() {
-		clone = Instantiate (clonePrefab, cloneSpawner.transform.position, Quaternion.identity) as GameObject;
-		clone.gameObject.name = "Clone";
-
-		Collider2D[] underneath = Physics2D.OverlapCircleAll (clone.transform.position, .2f);
-		foreach (Collider2D collider in underneath) {
-			if (collider.gameObject != clone && collider.gameObject != cloneSpawner && collider.GetComponent<Hole> ()) {
-				DestroyClone ();
-			}
-		}
+		Vector3 spawnPoint = RoundToNearestHalf (cloneSpawner.transform.position);
 
 		DestroyCloneSpawner ();
+		clone = Instantiate (clonePrefab, spawnPoint, Quaternion.identity) as GameObject;
+		//clone.transform.parent = transform;
 
 		GetComponent<GridMovement> ().enabled = true;
-		clone.GetComponent<GridMovement> ().enabled = true;
+		clone.GetComponent <GridMovement> ().enabled = true;
 		elapsedCloneTime = 0;
+	}
+
+	Vector3 RoundToNearestHalf (Vector3 position) {
+		position *= 2;
+
+		Vector3 rounded = new Vector3 (Mathf.Round (position.x),
+			                           Mathf.Round (position.y),
+			                           Mathf.Round (position.z));
+
+		return rounded / 2;
 	}
 
 	IEnumerator DestroyCloneTimed() {
