@@ -8,6 +8,12 @@ public class Hole : MonoBehaviour {
 	private bool containsSpawner;
 	private GameObject cloneSpawner;
 
+	void Start() {
+		if (!respawnPoint) {
+			respawnPoint = GameObject.FindGameObjectWithTag ("Respawn");
+		}
+	}
+
 	void Update() {
 		// Relies on fact clone spawner is destroyed when clone spawns
 		if (containsSpawner && cloneSpawner == null) {
