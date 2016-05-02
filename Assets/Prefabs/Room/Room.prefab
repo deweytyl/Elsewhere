@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &188074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 480564}
+  - 114: {fileID: 11454664}
+  m_Layer: 0
+  m_Name: Room
+  m_TagString: Room
+  m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &480564
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.5, y: 4.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11454664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27b309cf7c2540bab6cee25f3d8bf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomMapCSV: {fileID: 0}
+  roomContainerPrefab: {fileID: 199414, guid: 37208d30927c449d6ac5474b72f0d3bb, type: 2}
+  tileMappingsList:
+  - name: F
+    prefab: {fileID: 172888, guid: 87274d4614eb4440ca334792991258b7, type: 2}
+  - name: W
+    prefab: {fileID: 188778, guid: 4e0a2cb21f51141339194bcbb8aadc86, type: 2}
+  - name: H
+    prefab: {fileID: 153776, guid: a14aaf49604c24ff3a78ec157b1381e9, type: 2}
+  - name: DC
+    prefab: {fileID: 108756, guid: 0c0a41b5040794623b9b939348958487, type: 2}
+  - name: C
+    prefab: {fileID: 118346, guid: c7260538bb4d84ee98d035c4caad51c5, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 188074}
+  m_IsPrefabParent: 1
