@@ -29,24 +29,17 @@ public class CloneAbility : MonoBehaviour {
 	void Update() {
 		if (!isActive && Input.GetKeyDown (KeyCode.C) && !playerMovement.IsMoving ()) {
 			ActivateClone ();
+		} else if (isActive && Input.GetKeyDown (KeyCode.C)) {
+			DestroyCloneSpawner (); // destroy both for good measure
+			DestroyClone (cancelled: true);
 		}
 
 		if (isActive && cloneSpawner) {
-
-			elapsedSteps = cloneSpawner.GetComponent<GridMovement> ().Steps () - initialSteps;
-			elapsedSpawnTime += Time.deltaTime;
-
-			if (elapsedSteps >= maxSpawnSteps || elapsedSpawnTime > spawnDuration) {
-				SpawnClone ();
-			}
+			TrackSpawnerDuration ();
 		}
 
 		if (isActive && clone) {
-			elapsedCloneTime += Time.deltaTime;
-
-			if (elapsedCloneTime > cloneDuration) {
-				DestroyClone ();
-			}
+			TrackCloneDuration ();
 		}
 
 		if (isActive && !cloneSpawner && !clone) {
@@ -82,7 +75,7 @@ public class CloneAbility : MonoBehaviour {
 	}
 
 	public void SpawnClone() {
-		Vector3 spawnPoint = RoundToNearestHalf (cloneSpawner.transform.position);
+		Vector3 spawnPoint = GridUtil.RoundToNearestHalf (cloneSpawner.transform.position);
 
 		DestroyCloneSpawner ();
 		clone = Instantiate (clonePrefab, spawnPoint, Quaternion.identity) as GameObject;
@@ -93,14 +86,21 @@ public class CloneAbility : MonoBehaviour {
 		elapsedCloneTime = 0;
 	}
 
-	Vector3 RoundToNearestHalf (Vector3 position) {
-		position *= 2;
+	void TrackSpawnerDuration() {
+		elapsedSteps = cloneSpawner.GetComponent<GridMovement> ().Steps () - initialSteps;
+		elapsedSpawnTime += Time.deltaTime;
 
-		Vector3 rounded = new Vector3 (Mathf.Round (position.x),
-			                           Mathf.Round (position.y),
-			                           Mathf.Round (position.z));
+		if (elapsedSteps >= maxSpawnSteps || elapsedSpawnTime > spawnDuration) {
+			SpawnClone ();
+		}
+	}
 
-		return rounded / 2;
+	void TrackCloneDuration() {
+		elapsedCloneTime += Time.deltaTime;
+
+		if (elapsedCloneTime > cloneDuration) {
+			DestroyClone ();
+		}
 	}
 
 	IEnumerator DestroyCloneTimed() {
@@ -116,8 +116,17 @@ public class CloneAbility : MonoBehaviour {
 		}
 	}
 
-	public void DestroyClone() {
+	public void DestroyClone(bool cancelled = false) {
 		if (clone) {
+			Key key;
+			if ((key = clone.GetComponentInChildren<Key> ()) != null) {
+				if (cancelled) {
+					key.Drop ();
+				} else {
+					key.Reset ();
+				}
+			}
+
 			Destroy (clone);
 			clone = null;
 
