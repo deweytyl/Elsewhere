@@ -7,7 +7,9 @@ TagManager:
   - Clone
   - CloneSpawner
   - PlayerAvatar
-  - Food
+  - Key
+  - RoomContainer
+  - Room
   layers:
   - Default
   - TransparentFX
@@ -53,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 40452853
+    locked: 0
+  - name: Carryables
+    uniqueID: 1353162163
     locked: 0
