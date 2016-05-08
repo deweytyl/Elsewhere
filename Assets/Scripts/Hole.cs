@@ -14,17 +14,6 @@ public class Hole : MonoBehaviour {
 		}
 	}
 
-	void Update() {
-		// Relies on fact clone spawner is destroyed when clone spawns
-		if (containsSpawner && cloneSpawner == null) {
-			GameObject clone = GameObject.FindGameObjectWithTag ("Clone");
-
-			Destroy (clone); // assumes only one clone
-
-			containsSpawner = false;
-		}
-	}
-
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			GameObject player = other.gameObject;
@@ -32,10 +21,24 @@ public class Hole : MonoBehaviour {
 			player.GetComponent<PlayerControl> ().RespawnAt (respawnPoint.transform.position);
 		
 		} else if (other.gameObject.CompareTag ("Clone")) {
-			Destroy (other.gameObject);
+			GameObject player = GameObject.FindGameObjectWithTag ("Player");
+
+			player.GetComponent<CloneAbility> ().DestroyClone ();
 		
 		} else if (other.gameObject.CompareTag ("CloneSpawner")) {
 			cloneSpawner = other.gameObject;
+
+		}
+	}
+
+	void OnTriggerStay() {
+		// Relies on fact clone spawner is destroyed when clone spawns
+		if (containsSpawner && cloneSpawner == null) {
+			GameObject clone = GameObject.FindGameObjectWithTag ("Clone");
+
+			Destroy (clone); // assumes only one clone
+
+			containsSpawner = false;
 		}
 	}
 
