@@ -52,6 +52,12 @@ MonoBehaviour:
     prefab: {fileID: 108756, guid: 0c0a41b5040794623b9b939348958487, type: 2}
   - name: C
     prefab: {fileID: 118346, guid: c7260538bb4d84ee98d035c4caad51c5, type: 2}
+  - name: I
+    prefab: {fileID: 143170, guid: 57a5df38916e64817a322983fc2c6b8c, type: 2}
+  - name: 1WG
+    prefab: {fileID: 128366, guid: 1a37e9a2117454ffc9ded8648d8d02c8, type: 2}
+  - name: T
+    prefab: {fileID: 192218, guid: af79621bd4ea54f8bbea2a83779992a6, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
