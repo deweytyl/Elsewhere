@@ -9,12 +9,14 @@ public class GridMovement : MonoBehaviour {
 	public bool selfControlling = false;
 	public float speed = 2.0f;
 
+	public bool isOnIce = false;
+
 	private const float COLLISION_RADIUS = 0.1f;
 
 	private int steps = 0;
 	private bool isMoving = false;
 
-	private Vector3 direction = Vector3.right;
+	private Vector3 direction = Vector3.zero;
 	private Vector3 destination;
 	private Vector3 previousPosition;
 
@@ -57,9 +59,13 @@ public class GridMovement : MonoBehaviour {
 		if (!isMoving) {
 			direction = newDirection;
 
-			if (!CheckForObstacles (destination + direction, direction)) {
-				destination += direction;
-			}
+			IncrementDestinationByCurrentDirection ();
+		}
+	}
+
+	public void IncrementDestinationByCurrentDirection() {
+		if (!CheckForObstacles (destination + direction, direction)) {
+			destination += direction;
 		}
 	}
 
@@ -125,7 +131,7 @@ public class GridMovement : MonoBehaviour {
 	}
 
 
-
+	// Property accessors
 
 	public int Steps() {
 		return steps;
