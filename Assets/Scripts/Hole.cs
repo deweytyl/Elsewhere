@@ -5,9 +5,6 @@ public class Hole : MonoBehaviour {
 	
 	public GameObject respawnPoint;
 
-	private bool containsSpawner;
-	private GameObject cloneSpawner;
-
 	void Start() {
 		if (!respawnPoint) {
 			respawnPoint = GameObject.FindGameObjectWithTag ("Respawn");
@@ -25,27 +22,6 @@ public class Hole : MonoBehaviour {
 
 			player.GetComponent<CloneAbility> ().DestroyClone ();
 		
-		} else if (other.gameObject.CompareTag ("CloneSpawner")) {
-			cloneSpawner = other.gameObject;
-
-		}
-	}
-
-	void OnTriggerStay() {
-		// Relies on fact clone spawner is destroyed when clone spawns
-		if (containsSpawner && cloneSpawner == null) {
-			GameObject clone = GameObject.FindGameObjectWithTag ("Clone");
-
-			Destroy (clone); // assumes only one clone
-
-			containsSpawner = false;
-		}
-	}
-
-	void OnTriggerExit2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("CloneSpawner")) {
-			containsSpawner = false;
-			cloneSpawner = null;
 		}
 	}
 }
