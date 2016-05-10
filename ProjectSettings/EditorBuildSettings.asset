@@ -5,17 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/_Scenes/prologue_1.unity
-  - enabled: 0
-    path: Assets/_Scenes/powertest.unity
   - enabled: 1
-    path: Assets/_Scenes/Room_1.unity
+    path: Assets/_Scenes/IntroRooms/Room_1.unity
   - enabled: 1
-    path: Assets/_Scenes/Room_2.unity
+    path: Assets/_Scenes/IntroRooms/Room_2.unity
   - enabled: 1
-    path: Assets/_Scenes/Room_3.unity
+    path: Assets/_Scenes/IntroRooms/Room_3.unity
   - enabled: 1
-    path: Assets/_Scenes/Room_4.unity
+    path: Assets/_Scenes/IntroRooms/Room_4.unity
   - enabled: 1
-    path: Assets/_Scenes/Room_5.unity
+    path: Assets/_Scenes/IntroRooms/Room_5.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_6.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_7.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_8.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_9.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_10.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_11.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_12.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_13.unity
+  - enabled: 1
+    path: Assets/_Scenes/IntroRooms/Room_14.unity
