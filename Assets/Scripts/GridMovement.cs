@@ -21,14 +21,29 @@ public class GridMovement : MonoBehaviour {
 	private Vector3 destination;
 	private Vector3 previousPosition;
 
+	private GameObject player;
+	static Quaternion playerRotation;
+
 	// Use this for initialization
 	void Start() {
 		ClearDestination ();
+		playerRotation = new Quaternion();
 		originalSpeed = speed;
+		player = GameObject.Find ("Player");
 	}
 
 	void Update() {
+		player.transform.rotation = rotatePlayer ();
 		PerformMove ();
+	}
+
+	static Quaternion rotatePlayer () {
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			playerRotation = new Quaternion (0.0f, 0.0f, 0.0f, 0.0f);
+		}else if (Input.GetKey (KeyCode.LeftArrow)) {
+			GridMovement.playerRotation.Set(0.0f, 180.0f, 0.0f, 0.0f);
+		}
+		return GridMovement.playerRotation;
 	}
 
 	void PerformMove () {
@@ -109,6 +124,7 @@ public class GridMovement : MonoBehaviour {
 			return Vector3.up;
 
 		} else if (Input.GetKey (KeyCode.DownArrow)) {
+			
 			return Vector3.down;
 
 		} else if (Input.GetKey (KeyCode.LeftArrow)) {
@@ -145,6 +161,10 @@ public class GridMovement : MonoBehaviour {
 
 	public bool IsMoving() {
 		return isMoving;
+	}
+
+	public Quaternion getRotation() {
+		return playerRotation;
 	}
 
 	public Vector3 Direction() {

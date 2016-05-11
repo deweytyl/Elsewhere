@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selfControlling: 0
   speed: 2.5
+  isOnIce: 0
 --- !u!212 &21269926
 SpriteRenderer:
   m_ObjectHideFlags: 1
