@@ -7,12 +7,13 @@ using System.Linq;
 public class GridMovement : MonoBehaviour {
 
 	public bool selfControlling = false;
-	public float speed = 2.0f;
+	public float speed = 2.5f;
 
 	public bool isOnIce = false;
 
 	private const float COLLISION_RADIUS = 0.1f;
 
+	private float originalSpeed;
 	private int steps = 0;
 	private bool isMoving = false;
 
@@ -23,6 +24,7 @@ public class GridMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		ClearDestination ();
+		originalSpeed = speed;
 	}
 
 	void Update() {
@@ -72,6 +74,10 @@ public class GridMovement : MonoBehaviour {
 	public void ClearDestination() {
 		destination = gameObject.transform.position;
 		previousPosition = destination;
+	}
+
+	public void ResetSpeed() {
+		speed = originalSpeed;
 	}
 
 	bool CheckForObstacles (Vector3 newDestination, Vector3 newDirection) {

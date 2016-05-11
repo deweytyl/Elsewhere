@@ -3,11 +3,14 @@ using System.Collections;
 
 public class Ice : MonoBehaviour {
 
+	private const float ICE_SPEED = 4.0f;
+
 	private GridMovement presentMovement;
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Player") || other.CompareTag ("Clone")) {
 			presentMovement = other.GetComponent<GridMovement> ();
+
 			presentMovement.IncrementDestinationByCurrentDirection ();
 		}
 	}
@@ -18,11 +21,13 @@ public class Ice : MonoBehaviour {
 
 		if (presentMovement) {
 			presentMovement.isOnIce = true;
+			presentMovement.speed = ICE_SPEED;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
 		presentMovement.isOnIce = false;
+		presentMovement.ResetSpeed ();
 		presentMovement = null;
 	}
 }
