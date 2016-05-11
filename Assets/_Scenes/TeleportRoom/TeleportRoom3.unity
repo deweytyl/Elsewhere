@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &97381366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &240170885
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &270861650
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &397580316
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &463752531
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4110,7 +4110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &858881773
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4269,7 +4269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &867681261
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5140,6 +5140,52 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 494354, guid: 755f3d1a6f98448b98321a62a9856ee1, type: 2}
   m_PrefabInternal: {fileID: 1107409173}
+--- !u!1001 &1117518825
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488258, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 488258, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 488258, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488258, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488258, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488258, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488258, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488258, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1117518826 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 111748, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+  m_PrefabInternal: {fileID: 1117518825}
 --- !u!1 &1137606090
 GameObject:
   m_ObjectHideFlags: 0
@@ -5327,7 +5373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1150593080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5413,7 +5459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1186540232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5557,7 +5603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1224450245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5774,7 +5820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1254489064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6514,7 +6560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1394788942
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6760,7 +6806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1472592846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7907,7 +7953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1682169843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8940,7 +8986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1828436331
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9462,7 +9508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1941104145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9548,7 +9594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49f1b6a2653546e0a8e1a32a07b1ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1117518826}
 --- !u!61 &1952399212
 BoxCollider2D:
   m_ObjectHideFlags: 0
