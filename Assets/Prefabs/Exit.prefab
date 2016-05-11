@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9faaeccd5d18e413abdd34c18d5b0ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: IntroRoom
 --- !u!212 &21246620
 SpriteRenderer:
   m_ObjectHideFlags: 1

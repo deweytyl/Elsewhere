@@ -1485,6 +1485,15 @@ Prefab:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 11497104, guid: 352edb2218a824a1689bc6f3b7bba75d, type: 2}
+      propertyPath: nextScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 3edd4a247b4c549bf88539217b002bf6,
+        type: 3}
+    - target: {fileID: 11497104, guid: 352edb2218a824a1689bc6f3b7bba75d, type: 2}
+      propertyPath: nextSceneName
+      value: IntroRoom2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 352edb2218a824a1689bc6f3b7bba75d, type: 2}
   m_IsPrefabParent: 0
