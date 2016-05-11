@@ -14,8 +14,11 @@ public class Ice : MonoBehaviour {
 
 	IEnumerator OnTriggerStay2D(Collider2D other) {
 		// wait until one ice panel
-		yield return new WaitWhile (() => presentMovement.isOnIce);
-		presentMovement.isOnIce = true;
+		yield return new WaitWhile (() => presentMovement && presentMovement.isOnIce);
+
+		if (presentMovement) {
+			presentMovement.isOnIce = true;
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {

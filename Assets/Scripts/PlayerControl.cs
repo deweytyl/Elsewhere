@@ -30,6 +30,12 @@ public class PlayerControl : MonoBehaviour {
 			if (!movement.IsMoving () && !cloneMovement.IsMoving ()) {
 				movement.MoveInDirection (direction);
 				cloneMovement.MoveInDirection (direction);
+
+			} else if (cloneMovement.isOnIce && !movement.IsMoving ()) {
+				movement.MoveInDirection (direction);
+
+			} else if (movement.isOnIce && !cloneMovement.IsMoving ()) {
+				cloneMovement.MoveInDirection (direction);
 			}
 		} else if (movement.enabled) {
 			movement.MoveInDirection (direction);
