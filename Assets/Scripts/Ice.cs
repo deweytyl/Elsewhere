@@ -26,8 +26,10 @@ public class Ice : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
-		presentMovement.isOnIce = false;
-		presentMovement.ResetSpeed ();
-		presentMovement = null;
+		if (presentMovement) {
+			presentMovement.isOnIce = false;
+			presentMovement.ResetSpeed ();
+			presentMovement = null;
+		}
 	}
 }
