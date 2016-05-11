@@ -33,3 +33,25 @@ EditorBuildSettings:
     path: Assets/_Scenes/IntroRooms/IntroRoom13.unity
   - enabled: 1
     path: Assets/_Scenes/IntroRooms/IntroRoom14.unity
+  - enabled: 1
+    path: Assets/_Scenes/TeleportRoom/TeleportRoom1.unity
+  - enabled: 1
+    path: Assets/_Scenes/TeleportRoom/TeleportRoom2.unity
+  - enabled: 1
+    path: Assets/_Scenes/TeleportRoom/TeleportRoom3.unity
+  - enabled: 1
+    path: Assets/_Scenes/TeleportRoom/TeleportRoom4.unity
+  - enabled: 1
+    path: Assets/_Scenes/TeleportRoom/TeleportRoom5.unity
+  - enabled: 1
+    path: Assets/_Scenes/TeleportRoom/TeleportRoom6.unity
+  - enabled: 1
+    path: Assets/_Scenes/IceRooms/IceRoom1.unity
+  - enabled: 1
+    path: Assets/_Scenes/IceRooms/IceRoom2.unity
+  - enabled: 1
+    path: Assets/_Scenes/HubRooms/HubRoom2.unity
+  - enabled: 1
+    path: Assets/_Scenes/HubRooms/HubRoom1.unity
+  - enabled: 1
+    path: Assets/_Scenes/HubRooms/HubRoom3.unity
