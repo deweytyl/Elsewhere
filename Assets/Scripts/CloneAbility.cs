@@ -32,6 +32,7 @@ public class CloneAbility : MonoBehaviour {
 		} else if (isActive && Input.GetKeyDown (KeyCode.C)) {
 			DestroyCloneSpawner (); // destroy both for good measure
 			DestroyClone (cancelled: true);
+			playerMovement.enabled = true;
 		}
 
 		if (isActive && cloneSpawner) {

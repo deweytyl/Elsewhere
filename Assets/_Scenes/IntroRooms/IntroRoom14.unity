@@ -3144,6 +3144,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 111748, guid: ed6ad2298e28442438198a8131fca656, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed6ad2298e28442438198a8131fca656, type: 2}
   m_IsPrefabParent: 0
@@ -9129,6 +9133,10 @@ Prefab:
       propertyPath: roomMapCSV
       value: 
       objectReference: {fileID: 4900000, guid: 8c8bbed4c28a55c409473694bbe45fc2, type: 3}
+    - target: {fileID: 188074, guid: 3f68861ff556849358fd8164e1f34cbe, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f68861ff556849358fd8164e1f34cbe, type: 2}
   m_IsPrefabParent: 0
