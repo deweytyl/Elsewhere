@@ -34,6 +34,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/IntroRooms/IntroRoom14.unity
   - enabled: 1
+    path: Assets/_Scenes/HubRooms/HubRoom1.unity
+  - enabled: 1
+    path: Assets/_Scenes/HubRooms/HubRoom2.unity
+  - enabled: 1
+    path: Assets/_Scenes/HubRooms/HubRoom3.unity
+  - enabled: 1
     path: Assets/_Scenes/TeleRooms/TeleRoom1.unity
   - enabled: 1
     path: Assets/_Scenes/TeleRooms/TeleRoom2.unity
@@ -56,8 +62,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/IceRooms/IceRoom2.unity
   - enabled: 1
-    path: Assets/_Scenes/HubRooms/HubRoom2.unity
+    path: Assets/_Scenes/IceRooms/IceRoom3.unity
   - enabled: 1
-    path: Assets/_Scenes/HubRooms/HubRoom1.unity
+    path: Assets/_Scenes/IceRooms/IceRoom4.unity
   - enabled: 1
-    path: Assets/_Scenes/HubRooms/HubRoom3.unity
+    path: Assets/_Scenes/IceRooms/IceRoom5.unity
+  - enabled: 1
+    path: Assets/_Scenes/IceRooms/IceRoom6.unity
+  - enabled: 1
+    path: Assets/_Scenes/IceRooms/IceRoom7.unity
+  - enabled: 1
+    path: Assets/_Scenes/IceRooms/IceRoom8.unity
+  - enabled: 1
+    path: Assets/_Scenes/IceRooms/IceRoomExit.unity
