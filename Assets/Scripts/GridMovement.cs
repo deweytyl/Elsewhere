@@ -11,7 +11,7 @@ public class GridMovement : MonoBehaviour {
 
 	public bool isOnIce = false;
 
-	private const float COLLISION_RADIUS = 0.1f;
+	private const float COLLISION_RADIUS = 0.25f;
 
 	private float originalSpeed;
 	private int steps = 0;
